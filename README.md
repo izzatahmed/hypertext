@@ -1,12 +1,12 @@
-# الموسوعة القرآنية المتشعبة | Quranic Hypertext Encyclopedia
+# الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia
 
 قراءة شبكية (Hypertext) لموضوعات القرآن الكريم بالعربية والإنجليزية.
-نزل القرآن نجوماً على مدى 23 سنة ورُتّب في المصحف ترتيباً آخر، فتقرأ الموسوعة النص شبكةً من العقد والروابط: كل موضوع صفحة، وكل رابط علاقة بين موضوعين.
+نزل القرآن الكريم نجوماً على مدى 23 سنة ورُتّب في المصحف ترتيباً آخر، فتقرأ الموسوعة النص شبكةً من العقد والروابط: كل موضوع صفحة، وكل رابط علاقة بين موضوعين.
 
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 27 في 8 محاور
+- عدد الموضوعات: 29 في 9 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -18,6 +18,8 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `iman.html` | الإيمان | Faith | العقيدة |
 | `kufr.html` | الكفر | Disbelief | العقيدة |
 | `ikhlas.html` | الإخلاص | Sincerity | العقيدة |
+| `malaika.html` | الملائكة | The Angels | أركان الإيمان |
+| `kutub.html` | الكتب | The Books | أركان الإيمان |
 | `jannah.html` | الجنة | Paradise | اليوم الآخر |
 | `nar.html` | النار | The Fire | اليوم الآخر |
 | `taqwa.html` | التقوى | Taqwa | الصيغ المتكررة |
