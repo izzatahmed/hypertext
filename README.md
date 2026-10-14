@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 23 في 8 محاور
+- عدد الموضوعات: 25 في 8 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -25,6 +25,8 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `sabr.html` | الصبر | Patience | الأخلاق |
 | `shukr.html` | الشكر | Gratitude | الأخلاق |
 | `ihsan.html` | الإحسان | Ihsan | الأخلاق |
+| `tawba.html` | التوبة | Repentance | الأخلاق |
+| `istighfar.html` | الاستغفار | Forgiveness | الأخلاق |
 | `salat.html` | الصلاة | Prayer | العبادات |
 | `zakat.html` | الزكاة | Zakat | العبادات |
 | `siyam.html` | الصيام | Fasting | العبادات |
