@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التشعب في النص القرآني | Qur'anic Hypertextuality</title>
+    <title>السبت والعهد | الموسوعة القرآنية المتشعبة</title>
 
     <!-- خطوط جوجل العربية والإنجليزية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -495,6 +495,8 @@
         .strength{font-weight:700;white-space:nowrap}
         .s-high{color:var(--accent-green)}.s-mid{color:var(--accent-gold)}.s-low{color:var(--accent-red)}
         .table-scroll{overflow-x:auto;max-width:100%}
+        .site-links{display:contents}
+        @media (max-width:520px){header{padding:.7rem 1rem}header .logo{font-size:1.12rem;gap:6px}header .lang-btn{padding:.4rem .9rem;font-size:.9rem}} /* update17: الاسم الأطول يبقى مع زر اللغة في سطر واحد على الهاتف */
 </style>
 </head>
 <body lang="ar" dir="rtl">
@@ -503,8 +505,8 @@
     <header>
         <a href="index.html" class="logo">
             <span>✨</span>
-            <span class="lang-ar">شبكة القرآن</span>
-            <span class="lang-en">Quran Hypertext</span>
+            <span class="lang-ar">الموسوعة القرآنية المتشعبة</span>
+            <span class="lang-en">Quranic Hypertext Encyclopedia</span>
         </a>
         <button class="lang-btn" onclick="toggleLanguage()">English</button>
     </header>
@@ -969,10 +971,10 @@
         </section>
     </div>
 
-    <section class="card-section" style="margin-top:1rem"><h3><span class="lang-ar">أبواب مرتبطة</span><span class="lang-en">Related</span></h3><p><a href="ihsan.html"><span class="lang-ar">الميثاق: وبالوالدين إحساناً (البقرة 83)</span><span class="lang-en">Ihsan</span></a> · <a href="shukr.html"><span class="lang-ar">العفو بعد العجل لعلكم تشكرون (البقرة 52)</span><span class="lang-en">Gratitude</span></a> · <a href="sabr.html"><span class="lang-ar">الأعراف 137: بما صبروا</span><span class="lang-en">Patience</span></a> · <a href="nuzul.html"><span class="lang-ar">أنزل ونزّل: الهيمنة</span><span class="lang-en">Revelation</span></a></p></section>
+    <section class="card-section" style="margin-top:1rem"><h3><span class="lang-ar">أبواب مرتبطة</span><span class="lang-en">Related</span></h3><p><a href="ihsan.html"><span class="lang-ar">الميثاق: وبالوالدين إحساناً (البقرة 83)</span><span class="lang-en">Ihsan</span></a> · <a href="shukr.html"><span class="lang-ar">العفو بعد العجل لعلكم تشكرون (البقرة 52)</span><span class="lang-en">Gratitude</span></a> · <a href="sabr.html"><span class="lang-ar">الأعراف 137: بما صبروا</span><span class="lang-en">Patience</span></a> · <a href="nuzul.html"><span class="lang-ar">أنزل ونزّل: الهيمنة</span><span class="lang-en">Revelation</span></a></p><div class="sub-links-bar"><span class="site-links"></span></div></section>
 <footer>
-        <p class="lang-ar">مشروع بحثي أكاديمي تفاعلي - التشعب في النص القرآني © 2026</p>
-        <p class="lang-en">Interactive Academic Research Project - Qur'anic Hypertextuality © 2026</p>
+        <p class="lang-ar">الموسوعة القرآنية المتشعبة © 2026 · نصوص الآيات من مصحف تنزيل (tanzil.net) · التحليل الصرفي من مدونة القرآن العربية (جامعة ليدز)</p>
+        <p class="lang-en">Quranic Hypertext Encyclopedia © 2026 · Verse texts from Tanzil (tanzil.net) · Morphology from the Quranic Arabic Corpus (University of Leeds)</p>
     </footer>
 
     <!-- JavaScript Navigation Logic & Language Toggle -->
@@ -1002,8 +1004,6 @@
             }
         }
     
-        document.querySelectorAll('.verse-tooltip').forEach(function(t){t.addEventListener('click',function(e){document.querySelectorAll('.verse-tooltip.open').forEach(function(o){if(o!==t)o.classList.remove('open')});t.classList.toggle('open');e.stopPropagation();});});
-        document.addEventListener('click',function(){document.querySelectorAll('.verse-tooltip.open').forEach(function(o){o.classList.remove('open')})});
         (function(){
           var N=[
            {id:'m48',l:'المائدة 48',x:450,y:55,c:'#c59b27',d:'إطار الهيمنة: مصدقاً لما بين يديه ومهيمناً عليه'},
@@ -1024,12 +1024,7 @@
             g.addEventListener('click',function(){var nb={};nb[n.id]=1;var txt='<strong>'+n.l+'</strong>: '+n.d+'<br>';L.forEach(function(o){var on=o.e[0]==n.id||o.e[1]==n.id;o.el.classList.toggle('dim',!on);if(on){nb[o.e[0]]=1;nb[o.e[1]]=1;var other=P[o.e[0]==n.id?o.e[1]:o.e[0]];txt+='&larr; '+other.l+' ('+o.e[3]+')<br>';}});G.forEach(function(x){x.g.classList.toggle('dim',!nb[x.n.id])});document.getElementById('netinfo').innerHTML=txt;});
             return {g:g,n:n}});
         })();
-        // update16: لف الجداول، وموضع التلميح داخل حدود الشاشة
-        document.querySelectorAll('table').forEach(function(t){if(t.closest('.table-wrap,.table-scroll'))return;var w=document.createElement('div');w.className='table-scroll';t.parentNode.insertBefore(w,t);w.appendChild(t)});
-        function placeTip(t){var b=t.querySelector('.tooltip-box');if(!b||getComputedStyle(b).display==='none')return;b.classList.add('tt-fixed');var de=document.documentElement,W=de.clientWidth,H=window.innerHeight,m=8,a=t.getBoundingClientRect(),bw=b.offsetWidth,bh=b.offsetHeight,hd=document.querySelector('header'),top0=(hd&&getComputedStyle(hd).position!=='static')?Math.max(0,hd.getBoundingClientRect().bottom):0,cx=a.left+a.width/2,x=Math.max(m,Math.min(cx-bw/2,W-m-bw)),y=a.top-bh-10,below=false;if(y<top0+m){if(a.bottom+10+bh<=H-m){y=a.bottom+10;below=true}else y=Math.max(m,y)}b.style.left=x+'px';b.style.top=y+'px';b.style.setProperty('--ax',Math.max(16,Math.min(bw-16,cx-x))+'px');b.classList.toggle('tt-below',below)}
-        function placeOpenTips(){document.querySelectorAll('.verse-tooltip').forEach(function(t){if(t.matches(':hover,:focus-within,.open'))placeTip(t)})}
-        document.querySelectorAll('.verse-tooltip').forEach(function(t){function go(){placeTip(t);requestAnimationFrame(function(){placeTip(t)})}t.addEventListener('mouseenter',go);t.addEventListener('focusin',go);t.addEventListener('click',go)});
-        (function(){var rq=0;function mv(){if(rq)return;rq=requestAnimationFrame(function(){rq=0;placeOpenTips()})}window.addEventListener('scroll',mv,{passive:true,capture:true});window.addEventListener('resize',mv)})();
 </script>
+<script src="assets/topics.js"></script><script src="assets/site.js?v=17"></script>
 </body>
 </html>
