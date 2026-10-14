@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 34 في 10 محاور
+- عدد الموضوعات: 35 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -45,6 +45,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `sabbath.html` | السبت والعهد | Sabbath | الهيمنة والعهد |
 | `nuzul.html` | أنزل ونزّل | Revelation | الهيمنة والعهد |
 | `musa.html` | قصة موسى | Moses | القصص والأمثال |
+| `yusuf.html` | قصة يوسف | Joseph | القصص والأمثال |
 | `amthal.html` | الأمثال | Parables | القصص والأمثال |
 
 ## البنية | Structure
