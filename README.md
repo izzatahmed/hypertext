@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 33 في 10 محاور
+- عدد الموضوعات: 34 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -17,6 +17,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `dalal.html` | الضلال | Misguidance | العقيدة |
 | `iman.html` | الإيمان | Faith | العقيدة |
 | `kufr.html` | الكفر | Disbelief | العقيدة |
+| `nifaq.html` | النفاق والمنافقون | Hypocrisy | العقيدة |
 | `ikhlas.html` | الإخلاص | Sincerity | العقيدة |
 | `asma.html` | الأسماء الحسنى | Divine Names | الأسماء الحسنى |
 | `malaika.html` | الملائكة | The Angels | أركان الإيمان |
