@@ -486,7 +486,8 @@
         .s-high{color:var(--accent-green)}.s-mid{color:var(--accent-gold)}.s-low{color:var(--accent-red)}
 .note{background:#fdf2e9;border-inline-start:4px solid var(--accent-red);padding:8px 12px;border-radius:8px}
 .table-wrap{overflow-x:auto;margin:1.2rem 0}
-.table-scroll{overflow-x:auto;max-width:100%} /* update16: يلف site.js به الجداول غير الملفوفة حتى لا تتجاوز عرض الهاتف */
+.table-scroll{overflow-x:auto;max-width:100%}
+.site-links{display:contents} /* update17: يملؤه site.js بروابط الصفحات من assets/topics.js */ /* update16: يلف site.js به الجداول غير الملفوفة حتى لا تتجاوز عرض الهاتف */
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem;margin-top:1.2rem}
 .topic-card{display:block;background:var(--bg-card);border:1px solid var(--border-color);border-top:5px solid var(--accent-gold);border-radius:14px;padding:1.3rem;color:var(--text-main);text-decoration:none;box-shadow:var(--shadow);transition:var(--transition)}
 .topic-card:hover,.topic-card:focus{transform:translateY(-4px);border-top-color:var(--accent-blue)}
@@ -498,3 +499,5 @@
 .stat{flex:1 1 150px;background:var(--accent-gold-light);border-radius:12px;padding:1rem;text-align:center}
 .stat b{display:block;font-size:1.8rem;color:var(--accent-gold)}
 #netinfo a{color:var(--accent-blue);font-weight:600}
+
+@media (max-width:520px){header{padding:.7rem 1rem}header .logo{font-size:1.12rem;gap:6px}header .lang-btn{padding:.4rem .9rem;font-size:.9rem}} /* update17: الاسم الأطول يبقى مع زر اللغة في سطر واحد على الهاتف */
