@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 40 في 10 محاور
+- عدد الموضوعات: 42 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -44,6 +44,8 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `riba.html` | الربا | Riba | التدرج في التشريع |
 | `jihad.html` | القتال | Fighting | التدرج في التشريع |
 | `mawarith.html` | المواريث والدَّين | Inheritance and debt | التدرج في التشريع |
+| `zawaj.html` | الزواج | Marriage | التدرج في التشريع |
+| `talaq.html` | الطلاق والعدة والرضاع | Divorce and nursing | التدرج في التشريع |
 | `sabbath.html` | السبت والعهد | Sabbath | الهيمنة والعهد |
 | `nuzul.html` | أنزل ونزّل | Revelation | الهيمنة والعهد |
 | `musa.html` | قصة موسى | Moses | القصص والأمثال |
