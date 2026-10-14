@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 29 في 9 محاور
+- عدد الموضوعات: 31 في 9 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -20,6 +20,8 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `ikhlas.html` | الإخلاص | Sincerity | العقيدة |
 | `malaika.html` | الملائكة | The Angels | أركان الإيمان |
 | `kutub.html` | الكتب | The Books | أركان الإيمان |
+| `rusul.html` | الرسل | Messengers | أركان الإيمان |
+| `akhira.html` | اليوم الآخر | The Last Day | اليوم الآخر |
 | `jannah.html` | الجنة | Paradise | اليوم الآخر |
 | `nar.html` | النار | The Fire | اليوم الآخر |
 | `taqwa.html` | التقوى | Taqwa | الصيغ المتكررة |
