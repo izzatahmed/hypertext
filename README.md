@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 25 في 8 محاور
+- عدد الموضوعات: 27 في 8 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -17,6 +17,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `dalal.html` | الضلال | Misguidance | العقيدة |
 | `iman.html` | الإيمان | Faith | العقيدة |
 | `kufr.html` | الكفر | Disbelief | العقيدة |
+| `ikhlas.html` | الإخلاص | Sincerity | العقيدة |
 | `jannah.html` | الجنة | Paradise | اليوم الآخر |
 | `nar.html` | النار | The Fire | اليوم الآخر |
 | `taqwa.html` | التقوى | Taqwa | الصيغ المتكررة |
@@ -30,6 +31,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `salat.html` | الصلاة | Prayer | العبادات |
 | `zakat.html` | الزكاة | Zakat | العبادات |
 | `siyam.html` | الصيام | Fasting | العبادات |
+| `hajj.html` | الحج | Hajj | العبادات |
 | `khamr.html` | الخمر | Wine | التدرج في التشريع |
 | `riba.html` | الربا | Riba | التدرج في التشريع |
 | `jihad.html` | القتال | Fighting | التدرج في التشريع |
