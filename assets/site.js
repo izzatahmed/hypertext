@@ -1,4 +1,4 @@
-/* الموسوعة القرآنية المتشعبة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update17)
+/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update18)
    تعتمد على assets/topics.js (TOPICS وAXES وTLINKS) للبحث وروابط التذييل وخريطة الصفحة الرئيسية. */
 function isAr(){return document.body.getAttribute('lang')==='ar'}
 function toggleLanguage(){var b=document.body,btn=document.querySelector('.lang-btn');if(isAr()){b.setAttribute('lang','en');b.setAttribute('dir','ltr');btn.textContent='العربية'}else{b.setAttribute('lang','ar');b.setAttribute('dir','rtl');btn.textContent='English'}if(window.netLabels)netLabels()}
@@ -25,13 +25,13 @@ try{fillSiteLinks()}catch(e){console.error(e)}
 function buildAutoNet(){var T=window.TOPICS,A=window.AXES,LK=window.TLINKS||[];if(!T||!A)return null;
   var axes=Object.keys(A).filter(function(a){return T.some(function(t){return t.ax===a})}),nodes=[];
   axes.forEach(function(a){T.forEach(function(t){if(t.ax===a)nodes.push(t)})});
-  var gap=0.8,step=2*Math.PI/(nodes.length+gap*axes.length),first=nodes.filter(function(t){return t.ax===axes[0]}).length,ang=-Math.PI/2-(first-1)*step/2,prev=null,N=[],byId={};
-  nodes.forEach(function(t){if(prev!==null&&t.ax!==prev)ang+=gap*step;prev=t.ax;var n={id:t.id,ar:t.ar,en:t.en,x:Math.round(450+300*Math.cos(ang)),y:Math.round(262+205*Math.sin(ang)),c:A[t.ax][0],dar:t.d?t.d[0]:'',den:t.d?t.d[1]:'',u:t.f,la:ang};N.push(n);byId[t.id]=t;ang+=step});
+  var cx=500,cy=380,r=228,gap=0.8,step=2*Math.PI/(nodes.length+gap*axes.length),first=nodes.filter(function(t){return t.ax===axes[0]}).length,ang=-Math.PI/2-(first-1)*step/2,prev=null,N=[],byId={};
+  nodes.forEach(function(t){if(prev!==null&&t.ax!==prev)ang+=gap*step;prev=t.ax;N.push({id:t.id,ar:t.ar,en:t.en,x:Math.round(cx+r*Math.cos(ang)),y:Math.round(cy+r*Math.sin(ang)),c:A[t.ax][0],dar:t.d?t.d[0]:'',den:t.d?t.d[1]:'',u:t.f,la:ang});byId[t.id]=t;ang+=step});
   var E=LK.filter(function(l){return byId[l[0]]&&byId[l[1]]}).map(function(l){return[l[0],l[1],A[byId[l[0]].ax][0],l[2],l[3]]});
-  return{N:N,E:E,chord:true,fs:[15,12.5]}}
+  return{N:N,E:E,chord:true,radial:true,vb:'0 0 1000 760',cx:cx,cy:cy,fs:[15,13]}}
 
-(function(){try{var NET=window.NET==='auto'?buildAutoNet():window.NET;if(!NET||!NET.N)return;var N=NET.N,E=NET.E;var s=document.getElementById('netsvg');if(!s)return;var ns='http://www.w3.org/2000/svg',Pm={},cur=null,ch=!!NET.chord;N.forEach(function(n){Pm[n.id]=n});
-function curve(a,b,k){var mx=(a.x+b.x)/2,my=(a.y+b.y)/2;if(ch){mx=450+(mx-450)*0.3;my=262+(my-262)*0.3}else my-=k;return 'M'+a.x+','+a.y+' Q'+mx+','+my+' '+b.x+','+b.y}
+(function(){try{var NET=window.NET==='auto'?buildAutoNet():window.NET;if(!NET||!NET.N)return;var N=NET.N,E=NET.E;var s=document.getElementById('netsvg');if(!s)return;if(NET.vb)s.setAttribute('viewBox',NET.vb);var ns='http://www.w3.org/2000/svg',Pm={},cur=null,ch=!!NET.chord;N.forEach(function(n){Pm[n.id]=n});
+function curve(a,b,k){var mx=(a.x+b.x)/2,my=(a.y+b.y)/2;if(ch){var ccx=NET.cx||450,ccy=NET.cy||262;mx=ccx+(mx-ccx)*0.25;my=ccy+(my-ccy)*0.25}else my-=k;return 'M'+a.x+','+a.y+' Q'+mx+','+my+' '+b.x+','+b.y}
 var L=E.map(function(e){var a=Pm[e[0]],b=Pm[e[1]],p=document.createElementNS(ns,'path');p.setAttribute('d',curve(a,b,e[5]||0));p.setAttribute('fill','none');p.setAttribute('stroke',e[2]);p.setAttribute('stroke-width',ch?'1.8':'2.5');p.setAttribute('opacity',ch?'.55':'.8');if(e[2]=='#8e44ad')p.setAttribute('stroke-dasharray','6 5');s.appendChild(p);return{el:p,e:e}});
 function info(n){var ar=isAr(),x='<strong>'+(ar?n.ar:n.en)+'</strong>: '+(ar?n.dar:n.den)+(n.u?' &mdash; <a href="'+n.u+'">'+(ar?'افتح الصفحة':'Open page')+'</a>':'')+'<br>';L.forEach(function(o){if(o.e[0]==n.id||o.e[1]==n.id){var m=Pm[o.e[0]==n.id?o.e[1]:o.e[0]];x+=(ar?'&larr; ':'&rarr; ')+(ar?m.ar:m.en)+' ('+(ar?o.e[3]:o.e[4])+')<br>'}});document.getElementById('netinfo').innerHTML=x}
 var G=N.map(function(n){var g=document.createElementNS(ns,'g');g.setAttribute('class','node');g.setAttribute('tabindex','0');var c=document.createElementNS(ns,'circle');c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);c.setAttribute('r',ch?13:15);c.setAttribute('fill',n.c);var t=document.createElementNS(ns,'text');t.setAttribute('class','node-label');g.appendChild(c);g.appendChild(t);s.appendChild(g);
@@ -39,7 +39,9 @@ function pick(){cur=n;var nb={};nb[n.id]=1;L.forEach(function(o){var on=o.e[0]==
 g.addEventListener('click',pick);g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});return{g:g,n:n,t:t}});
 window.netLabels=function(){var ar=isAr(),fs=NET.fs||[17,14];G.forEach(function(z){var n=z.n,t=z.t,size=ar?fs[0]:fs[1];t.textContent=ar?n.ar:n.en;t.setAttribute('direction',ar?'rtl':'ltr');t.style.fontFamily=ar?"'Noto Naskh Arabic','Amiri',serif":"'Inter',sans-serif";t.style.fontSize=size+'px';t.style.fontWeight='700';
   if(n.la===undefined){t.setAttribute('x',n.x);t.setAttribute('y',n.y-22);t.setAttribute('text-anchor','middle');return}
-  var c=Math.cos(n.la),sn=Math.sin(n.la),side=c>0.15?1:(c<-0.15?-1:0),x=n.x+c*22,y=n.y+sn*22;
+  var c=Math.cos(n.la),sn=Math.sin(n.la);
+  if(NET.radial){var right=c>=0,deg=n.la*180/Math.PI+(right?0:180),lx=Math.round(n.x+c*20),ly=Math.round(n.y+sn*20);t.setAttribute('x',lx);t.setAttribute('y',ly);t.setAttribute('dy','0.35em');t.setAttribute('transform','rotate('+deg.toFixed(1)+' '+lx+' '+ly+')');t.setAttribute('text-anchor',right!==ar?'start':'end');return}
+  var side=c>0.15?1:(c<-0.15?-1:0),x=n.x+c*22,y=n.y+sn*22;
   if(side===0)y+=sn>0?size*0.8:0;else y+=size*0.35;
   t.setAttribute('x',Math.round(x));t.setAttribute('y',Math.round(y));t.setAttribute('text-anchor',side===0?'middle':((side>0)!==ar?'start':'end'))});
   if(cur)info(cur);else document.getElementById('netinfo').textContent=ar?'اختر عقدة.':'Select a node.'};netLabels()}catch(err){console.error(err)}})();
