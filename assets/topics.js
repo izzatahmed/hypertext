@@ -1,6 +1,6 @@
 /* سجل الموضوعات: المصدر الوحيد لقائمة الصفحات. يُستعمل في البحث وروابط التذييل وخريطة الصفحة الرئيسية.
    لإضافة موضوع: أضف سطراً إلى TOPICS (وروابطه إلى TLINKS)، ثم ارفع الصفحة الجديدة وهذا الملف وindex.html (البطاقة). */
-window.SEARCH_V="38";
+window.SEARCH_V="39";
 window.AXES={"creed":["#c0392b", "العقيدة", "Creed"],"asma":["#3949ab", "الأسماء الحسنى", "Divine Names"],"pillars":["#795548", "أركان الإيمان", "Articles of faith"],"last":["#34495e", "اليوم الآخر", "The Last Day"],"formula":["#27ae60", "الصيغ المتكررة", "Recurring formulas"],"character":["#8e44ad", "الأخلاق", "Character"],"worship":["#d35400", "العبادات", "Worship"],"grad":["#c59b27", "التدرج في التشريع", "Gradual legislation"],"cov":["#2980b9", "الهيمنة والعهد", "Guardianship and covenant"],"story":["#16a085", "القصص والأمثال", "Stories and parables"]};
 window.TOPICS=[
   {"id": "tw", "f": "tawhid.html", "ar": "التوحيد", "en": "Tawhid", "ax": "creed", "k": "لا إله إلا الله شرك عقيدة", "d": ["مركز الشبكة", "The hub"]},
