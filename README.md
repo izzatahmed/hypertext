@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 49 في 10 محاور
+- عدد الموضوعات: 50 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -59,6 +59,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `aqwam.html` | هود وصالح ولوط وشعيب | Hud, Salih, Lot, Shu'ayb | القصص والأمثال |
 | `dawud.html` | داود وسليمان | David and Solomon | القصص والأمثال |
 | `zakariya.html` | زكريا ويحيى | Zechariah and John | القصص والأمثال |
+| `yunus.html` | قصة يونس | Jonah | القصص والأمثال |
 | `latayif.html` | اللطائف العددية | Numerical observations | القصص والأمثال |
 | `amthal.html` | الأمثال | Parables | القصص والأمثال |
 
