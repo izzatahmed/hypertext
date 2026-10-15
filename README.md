@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 55 في 10 محاور
+- عدد الموضوعات: 56 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -65,6 +65,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `sama.html` | السماء والأرض | Heaven and earth | الصيغ المتكررة |
 | `hasana.html` | الحسنات والسيئات | Good and bad deeds | الأخلاق |
 | `dhikr.html` | الذكر والحمد والتسبيح | Remembrance and glorification | الصيغ المتكررة |
+| `dunya.html` | الدنيا والآخرة والدرجات | This world, the Hereafter and degrees | اليوم الآخر |
 | `latayif.html` | اللطائف العددية | Numerical observations | القصص والأمثال |
 | `amthal.html` | الأمثال | Parables | القصص والأمثال |
 
