@@ -1,9 +1,17 @@
-/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update37)
+/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update38)
    تعتمد على assets/topics.js (TOPICS وAXES وTLINKS) للبحث وروابط التذييل وخريطة الصفحة الرئيسية،
    وعلى assets/search.js (فهرس البحث الكامل) الذي يُحمَّل عند أول استعمال لصندوق البحث،
    وعلى assets/raghib.js (مفردات الراغب الأصفهاني) الذي يُحمَّل بعده عند البحث بكلمة عربية. */
 function isAr(){return document.body.getAttribute('lang')==='ar'}
-function toggleLanguage(){var b=document.body,btn=document.querySelector('.lang-btn');if(isAr()){b.setAttribute('lang','en');b.setAttribute('dir','ltr');btn.textContent='العربية'}else{b.setAttribute('lang','ar');b.setAttribute('dir','rtl');btn.textContent='English'}if(window.netLabels)netLabels()}
+function setLang(l){var b=document.body,d=document.documentElement,btn=document.querySelector('.lang-btn'),ar=l==='ar';b.setAttribute('lang',l);b.setAttribute('dir',ar?'rtl':'ltr');d.setAttribute('lang',l);d.setAttribute('dir',ar?'rtl':'ltr');if(btn)btn.textContent=ar?'English':'العربية';if(window.netLabels)netLabels()}
+function toggleLanguage(){var l=isAr()?'en':'ar';setLang(l);try{localStorage.setItem('hx-lang',l)}catch(e){}}
+/* اللغة المختارة تبقى عند الانتقال بين الصفحات */
+(function(){try{var l=localStorage.getItem('hx-lang');if(l==='en'&&isAr())setLang('en')}catch(e){}})();
+
+/* التذييل: روابط المصادر، والمستودع، والإبلاغ عن خطأ */
+(function(){var f=document.querySelector('footer');if(!f||f.querySelector('a[href*="tanzil.net"]'))return;var A=function(u,t){return '<a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>'},h=f.innerHTML;
+  h=h.replace(/\(tanzil\.net\)/g,'('+A('https://tanzil.net','tanzil.net')+')').replace('مدونة القرآن العربية (جامعة ليدز)',A('https://corpus.quran.com','مدونة القرآن العربية (جامعة ليدز)')).replace('Quranic Arabic Corpus (University of Leeds)',A('https://corpus.quran.com','Quranic Arabic Corpus (University of Leeds)'));
+  h=h.replace(/(جامعة ليدز\)(<\/a>)?)(<\/span>|<\/p>)/,'$1 · '+A('https://github.com/izzatahmed/hypertext','المستودع')+' · '+A('https://github.com/izzatahmed/hypertext/issues','الإبلاغ عن خطأ')+'$3').replace(/(University of Leeds\)(<\/a>)?)(<\/span>|<\/p>)/,'$1 · '+A('https://github.com/izzatahmed/hypertext','Repository')+' · '+A('https://github.com/izzatahmed/hypertext/issues','Report an error')+'$3');f.innerHTML=h})();
 function goBackToPreviousReading(){if(window.history.length>1)window.history.back();else window.location.hash='#hero'}
 
 /* الجداول: كل جدول غير ملفوف يُلف بغلاف قابل للتمرير حتى لا يتجاوز عرض الهاتف */
@@ -36,10 +44,10 @@ function buildAutoNet(){var T=window.TOPICS,A=window.AXES,LK=window.TLINKS||[];i
 function curve(a,b,k){var mx=(a.x+b.x)/2,my=(a.y+b.y)/2;if(ch){var ccx=NET.cx||450,ccy=NET.cy||262;mx=ccx+(mx-ccx)*0.25;my=ccy+(my-ccy)*0.25}else my-=k;return 'M'+a.x+','+a.y+' Q'+mx+','+my+' '+b.x+','+b.y}
 var L=E.map(function(e){var a=Pm[e[0]],b=Pm[e[1]],p=document.createElementNS(ns,'path');p.setAttribute('d',curve(a,b,e[5]||0));p.setAttribute('fill','none');p.setAttribute('stroke',e[2]);p.setAttribute('stroke-width',ch?'1.8':'2.5');p.setAttribute('opacity',ch?'.55':'.8');if(e[2]=='#8e44ad')p.setAttribute('stroke-dasharray','6 5');s.appendChild(p);return{el:p,e:e}});
 function info(n){var ar=isAr(),x='<strong>'+(ar?n.ar:n.en)+'</strong>: '+(ar?n.dar:n.den)+(n.u?' &mdash; <a href="'+n.u+'">'+(ar?'افتح الصفحة':'Open page')+'</a>':'')+'<br>';L.forEach(function(o){if(o.e[0]==n.id||o.e[1]==n.id){var m=Pm[o.e[0]==n.id?o.e[1]:o.e[0]];x+=(ar?'&larr; ':'&rarr; ')+(ar?m.ar:m.en)+' ('+(ar?o.e[3]:o.e[4])+')<br>'}});document.getElementById('netinfo').innerHTML=x}
-var G=N.map(function(n){var g=document.createElementNS(ns,'g');g.setAttribute('class','node');g.setAttribute('tabindex','0');var c=document.createElementNS(ns,'circle');c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);c.setAttribute('r',ch?13:15);c.setAttribute('fill',n.c);var t=document.createElementNS(ns,'text');t.setAttribute('class','node-label');g.appendChild(c);g.appendChild(t);s.appendChild(g);
-function pick(){cur=n;var nb={};nb[n.id]=1;L.forEach(function(o){var on=o.e[0]==n.id||o.e[1]==n.id;o.el.classList.toggle('dim',!on);if(on){nb[o.e[0]]=1;nb[o.e[1]]=1}});G.forEach(function(z){z.g.classList.toggle('dim',!nb[z.n.id])});info(n)}
+var G=N.map(function(n){var g=document.createElementNS(ns,'g');g.setAttribute('class','node');g.setAttribute('tabindex','0');g.setAttribute('role','button');var c=document.createElementNS(ns,'circle');c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);c.setAttribute('r',ch?13:15);c.setAttribute('fill',n.c);var t=document.createElementNS(ns,'text');t.setAttribute('class','node-label');g.appendChild(c);g.appendChild(t);s.appendChild(g);
+function pick(){if(cur===n&&n.u){location.href=n.u;return}cur=n;var nb={};nb[n.id]=1;L.forEach(function(o){var on=o.e[0]==n.id||o.e[1]==n.id;o.el.classList.toggle('dim',!on);if(on){nb[o.e[0]]=1;nb[o.e[1]]=1}});G.forEach(function(z){z.g.classList.toggle('dim',!nb[z.n.id])});info(n)}
 g.addEventListener('click',pick);g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});return{g:g,n:n,t:t}});
-window.netLabels=function(){var ar=isAr(),fs=NET.fs||[17,14];G.forEach(function(z){var n=z.n,t=z.t,size=ar?fs[0]:fs[1];t.textContent=ar?n.ar:n.en;t.setAttribute('direction',ar?'rtl':'ltr');t.style.fontFamily=ar?"'Noto Naskh Arabic','Amiri',serif":"'Inter',sans-serif";t.style.fontSize=size+'px';t.style.fontWeight='700';
+window.netLabels=function(){var ar=isAr(),fs=NET.fs||[17,14];G.forEach(function(z){var n=z.n,t=z.t,size=ar?fs[0]:fs[1];t.textContent=ar?n.ar:n.en;z.g.setAttribute('aria-label',(ar?n.ar:n.en)+(n.u?(ar?' — انقر مرتين لفتح الصفحة':' — click twice to open the page'):''));t.setAttribute('direction',ar?'rtl':'ltr');t.style.fontFamily=ar?"'Noto Naskh Arabic','Amiri',serif":"'Inter',sans-serif";t.style.fontSize=size+'px';t.style.fontWeight='700';
   if(n.la===undefined){t.setAttribute('x',n.x);t.setAttribute('y',n.y-22);t.setAttribute('text-anchor','middle');return}
   var c=Math.cos(n.la),sn=Math.sin(n.la);
   if(NET.radial){var right=c>=0,deg=n.la*180/Math.PI+(right?0:180),lx=Math.round(n.x+c*20),ly=Math.round(n.y+sn*20);t.setAttribute('x',lx);t.setAttribute('y',ly);t.setAttribute('dy','0.35em');t.setAttribute('transform','rotate('+deg.toFixed(1)+' '+lx+' '+ly+')');t.setAttribute('text-anchor',right!==ar?'start':'end');return}

@@ -1,6 +1,6 @@
 /* سجل الموضوعات: المصدر الوحيد لقائمة الصفحات. يُستعمل في البحث وروابط التذييل وخريطة الصفحة الرئيسية.
    لإضافة موضوع: أضف سطراً إلى TOPICS (وروابطه إلى TLINKS)، ثم ارفع الصفحة الجديدة وهذا الملف وindex.html (البطاقة). */
-window.SEARCH_V="37";
+window.SEARCH_V="38";
 window.AXES={"creed":["#c0392b", "العقيدة", "Creed"],"asma":["#3949ab", "الأسماء الحسنى", "Divine Names"],"pillars":["#795548", "أركان الإيمان", "Articles of faith"],"last":["#34495e", "اليوم الآخر", "The Last Day"],"formula":["#27ae60", "الصيغ المتكررة", "Recurring formulas"],"character":["#8e44ad", "الأخلاق", "Character"],"worship":["#d35400", "العبادات", "Worship"],"grad":["#c59b27", "التدرج في التشريع", "Gradual legislation"],"cov":["#2980b9", "الهيمنة والعهد", "Guardianship and covenant"],"story":["#16a085", "القصص والأمثال", "Stories and parables"]};
 window.TOPICS=[
   {"id": "tw", "f": "tawhid.html", "ar": "التوحيد", "en": "Tawhid", "ax": "creed", "k": "لا إله إلا الله شرك عقيدة", "d": ["مركز الشبكة", "The hub"]},
@@ -18,7 +18,7 @@ window.TOPICS=[
   {"id": "ak", "f": "akhira.html", "ar": "اليوم الآخر", "en": "The Last Day", "ax": "last", "k": "اليوم الآخر يوم القيامة الآخرة الساعة البعث الميزان الصور القارعة الحاقة يوم الدين last day resurrection", "d": ["اليوم الآخر 26 آية (25 مدنية)، ويوم القيامة 70", "Last Day 26 (25 Medinan); Resurrection 70"]},
   {"id": "jn", "f": "jannah.html", "ar": "الجنة", "en": "Paradise", "ax": "last", "k": "جنة جنات الفردوس نعيم رضوان اليوم الآخر الآخرة", "d": ["نحو 143 آية: غاية الطريق", "About 143 verses: the end of the path"]},
   {"id": "nr", "f": "nar.html", "ar": "النار", "en": "The Fire", "ax": "last", "k": "نار جهنم جحيم سعير سقر لظى الحطمة الهاوية عذاب اليوم الآخر الآخرة", "d": ["«النار» و«جهنم» وستة أسماء", "The Fire, Jahannam and six names"]},
-  {"id": "tq", "f": "taqwa.html", "ar": "بناء التقوى", "en": "Building Taqwa", "ax": "formula", "k": "لعلكم تتقون لعلهم يتقون التقوى taqwa", "d": ["12 آية «لعلكم تتقون»", "12 verses"]},
+  {"id": "tq", "f": "taqwa.html", "ar": "بناء التقوى", "en": "Building Taqwa", "ax": "formula", "k": "لعلكم تتقون لعلهم يتقون التقوى taqwa", "d": ["12 آية: 6 «لعلكم تتقون» و6 «لعلهم يتقون»", "12 verses: 6 \"that you may\" and 6 \"that they may\""]},
   {"id": "yh", "f": "yuhibb.html", "ar": "ما يحبه الله", "en": "God loves", "ax": "formula", "k": "يحب محبة", "d": ["16 آية", "16 verses"]},
   {"id": "ly", "f": "layuhibb.html", "ar": "ما لا يحبه الله", "en": "Does not love", "ax": "formula", "k": "لا يحب", "d": ["23 آية", "23 verses"]},
   {"id": "tv", "f": "wiqaya.html", "ar": "التقوى", "en": "Taqwa", "ax": "character", "k": "تقوى التقوى اتقوا اتقى المتقين المتقون وقى وقاية تقي تقاة أتقاكم taqwa piety god-conscious mindful", "d": ["وقي: 258 كلمة في 237 آية", "w-q-y: 258 words in 237 verses"]},
