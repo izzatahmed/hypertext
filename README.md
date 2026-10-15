@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 48 في 10 محاور
+- عدد الموضوعات: 49 في 10 محاور
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور |
@@ -58,6 +58,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `maryam.html` | قصة مريم | Mary | القصص والأمثال |
 | `aqwam.html` | هود وصالح ولوط وشعيب | Hud, Salih, Lot, Shu'ayb | القصص والأمثال |
 | `dawud.html` | داود وسليمان | David and Solomon | القصص والأمثال |
+| `zakariya.html` | زكريا ويحيى | Zechariah and John | القصص والأمثال |
 | `latayif.html` | اللطائف العددية | Numerical observations | القصص والأمثال |
 | `amthal.html` | الأمثال | Parables | القصص والأمثال |
 
@@ -65,6 +66,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 - `assets/style.css`: التنسيق المشترك.
 - `assets/site.js`: اللغة، وتلميحات الآيات، والخرائط، والبحث، وروابط التذييل.
 - `assets/search.js`: **فهرس البحث**، يُولَّد آلياً من نصوص الصفحات ومدونة ليدز ونص تنزيل، ويُحمَّل عند أول استعمال لصندوق البحث. يبحث في نصوص الأقسام كلها، ويردّ الكلمة المكتوبة إلى جذرها القرآني فيجد الأقسام التي تستشهد بآيات من الجذر نفسه، ويذكر عدد كلمات الجذر وآياته في القرآن الكريم. يُعاد توليده مع كل تحديث للصفحات، ويُرفع مع `assets/topics.js` الذي يحمل رقم نسخته `SEARCH_V`. ولا يُحرَّر يدوياً.
+- `assets/raghib.js`: **مفردات الراغب**، نص «المفردات في غريب القرآن» للراغب الأصفهاني (تحقيق صفوان داودي) مقسّماً على مداخله، ومربوطاً بجذور مدونة ليدز. يُحمَّل بعد فهرس البحث عند البحث بكلمة عربية، فيُعرض معنى الجذر عند الراغب والمداخل التي ترد فيها الكلمة. مصدره مدونة OpenITI عن المكتبة الشاملة بترخيص CC BY-NC-SA 4.0، فيُنشر بالترخيص نفسه، ولا يُستعمل استعمالاً تجارياً. يُولَّد آلياً ولا يُحرَّر يدوياً.
 - `assets/topics.js`: **سجل الموضوعات**، المصدر الوحيد لقائمة الصفحات ومحاورها وروابط الخريطة العامة. منه تُولَّد نتائج البحث وروابط التذييل في كل صفحة وخريطة الصفحة الرئيسية.
 - `sabbath.html` تحمل تنسيقها وخريطتها الخاصة، وتستعمل site.js وtopics.js للبحث والتلميحات والروابط.
 
@@ -81,4 +83,4 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 - نصوص الآيات من [Tanzil](https://tanzil.net) (رواية حفص)، وفق شروط استخدامه: النص دون تعديل مع ذكر المصدر.
 - عدّ الجذور والصيغ من التحليل الصرفي في [مدونة القرآن العربية](https://corpus.quran.com) (جامعة ليدز، الإصدار 0.4 ونسخة مصححة عنه).
 - المشروع دراسة لبنية النص، لا فتوى ولا تفسير بديل. الإحصاءات آلية أولية تحتاج مراجعة يدوية.
-- Verse texts from Tanzil (Hafs), used unmodified with attribution; root counts from the Quranic Arabic Corpus (University of Leeds). A study of textual structure, not a fatwa; counts are preliminary.
+- Verse texts from Tanzil (Hafs), used unmodified with attribution; root counts from the Quranic Arabic Corpus (University of Leeds); al-Raghib's Mufradat (ed. Dawudi) from the OpenITI corpus via al-Maktaba al-Shamila, CC BY-NC-SA 4.0. A study of textual structure, not a fatwa; counts are preliminary.
