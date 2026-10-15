@@ -1,4 +1,4 @@
-/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update36)
+/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update37)
    تعتمد على assets/topics.js (TOPICS وAXES وTLINKS) للبحث وروابط التذييل وخريطة الصفحة الرئيسية،
    وعلى assets/search.js (فهرس البحث الكامل) الذي يُحمَّل عند أول استعمال لصندوق البحث،
    وعلى assets/raghib.js (مفردات الراغب الأصفهاني) الذي يُحمَّل بعده عند البحث بكلمة عربية. */
@@ -75,10 +75,10 @@ function rgBlock(e,html,withSecs){var ar=isAr(),d=document.createElement('div');
     if(ss.length)h+='<span class="sr-rgx" dir="'+(ar?'rtl':'ltr')+'">'+(ar?'أقسام تستشهد بآيات من جذره: ':'Sections citing verses with its root: ')+ss.map(function(s){var pg=IX.P[s.p];return'<a href="'+pg[0]+(s.id==='hero'?'':'#'+s.id)+'">'+esc(ar?pg[1]:pg[2])+(s.id==='hero'?'':(ar?' ‹ ':' › ')+esc(ar?s.tar:s.ten))+'</a>'}).join(ar?'، ':', ')+'</span>'}
   h+='<button type="button">'+(ar?'المدخل كاملاً':'Full entry')+'</button><div class="sr-rgf" hidden>'+rgFull(RG.T[e])+'</div>';d.innerHTML=h;
   var bt=d.querySelector('button'),f=d.querySelector('.sr-rgf');bt.addEventListener('click',function(ev){ev.stopPropagation();f.hidden=!f.hidden;bt.textContent=f.hidden?(isAr()?'المدخل كاملاً':'Full entry'):(isAr()?'إخفاء المدخل':'Hide entry')});u.appendChild(d)}
-function rgHits(info,shown){if(!RG)return[];if(!RG.NT)RG.NT=RG.T.map(n);var sc={};
+function rgHits(info,shown){if(!RG)return[];if(!RG.NT){RG.D=RG.T.map(function(t){return t.replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g,'')});RG.NT=RG.D.map(function(t){return n(t.replace(/\[[^\]\n]{1,40}\]/g,function(m){return new Array(m.length+1).join(' ')}))})}var sc={};
   info.forEach(function(o){if(!o.ar||o.core.length<3||STOP[o.core])return;var hits=0,loc={};RG.NT.forEach(function(t,e){var p=t.indexOf(o.core);if(p<0)return;hits++;var c=count(t,o.core,20);loc[e]=c+(p<160?4:0)+(n(RG.H[e])===o.core?10:0)});if(hits>200)return;for(var e in loc)sc[e]=(sc[e]||0)+loc[e]});
   return Object.keys(sc).filter(function(e){return shown.indexOf(+e)<0}).sort(function(a,b){return sc[b]-sc[a]}).slice(0,3).map(Number)}
-function rgSnip(e,info){var t=RG.T[e],nt=RG.NT[e],best=-1,len=0;info.forEach(function(o){if(best>-1||!o.ar)return;var p=nt.indexOf(o.core);if(p>-1){best=p;len=o.core.length}});if(best<0)return null;var a=Math.max(0,best-70),z=Math.min(t.length,best+len+110);return(a>0?'…':'')+esc(t.slice(a,best))+'<mark>'+esc(t.slice(best,best+len))+'</mark>'+esc(t.slice(best+len,z)).replace(/\n/g,' ')+(z<t.length?'…':'')}
+function rgSnip(e,info){var t=RG.D[e],nt=RG.NT[e],best=-1,len=0;info.forEach(function(o){if(best>-1||!o.ar)return;var p=nt.indexOf(o.core);if(p>-1){best=p;len=o.core.length}});if(best<0)return null;var a=Math.max(0,best-70),z=Math.min(t.length,best+len+110);return(a>0?'…':'')+esc(t.slice(a,best))+'<mark>'+esc(t.slice(best,best+len))+'</mark>'+esc(t.slice(best+len,z)).replace(/\n/g,' ')+(z<t.length?'…':'')}
 function load(){if(IX||loading)return;loading=true;var s=document.createElement('script');s.src='assets/search.js?v='+(window.SEARCH_V||'1');s.onload=function(){try{prep();if(i.value.trim())show()}catch(e){console.error(e)}};s.onerror=function(){loading=false};document.head.appendChild(s)}
 function prep(){var D=window.SEARCH;if(!D)return;var X={P:D.P,R:D.R,RI:D.RI,RV:D.RV,F:{},RK:{},S:D.S.map(function(x){return{p:x[0],id:x[1],tar:x[2],ten:x[3],ar:x[4],en:x[5],nar:n(x[4]),nen:x[5].toLowerCase(),ntar:n(x[2]),nten:x[3].toLowerCase(),v:x[6]?x[6].split('.').map(function(z){return parseInt(z,16)}):[]}})};
   D.F.forEach(function(s,k){if(s)s.split(' ').forEach(function(f){if(!(f in X.F))X.F[f]=k})});D.R.forEach(function(r,k){X.RK[n(r)]=k});IX=X}
