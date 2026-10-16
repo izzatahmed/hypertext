@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 62 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
+- عدد الموضوعات: 63 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور | القسم |
@@ -64,6 +64,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `yunus.html` | قصة يونس | Jonah | القصص | القصص والأمثال |
 | `ayyub.html` | أيوب والقصص القصيرة | Job and the short stories | القصص | القصص والأمثال |
 | `sira.html` | السيرة في القرآن الكريم | The Prophet's life in the Qur'an | القصص | القصص والأمثال |
+| `ibar.html` | قصص غير الأنبياء | Stories of non-prophets | القصص | القصص والأمثال |
 | `amthal.html` | الأمثال | Parables | القصص | القصص والأمثال |
 | `taqwa.html` | بناء التقوى | Building Taqwa | الأخلاق | الصيغ المتكررة |
 | `yuhibb.html` | ما يحبه الله | God loves | الأخلاق | الصيغ المتكررة |
