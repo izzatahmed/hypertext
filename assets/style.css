@@ -501,3 +501,15 @@
 #netinfo a{color:var(--accent-blue);font-weight:600}
 
 @media (max-width:520px){header{padding:.7rem 1rem}header .logo{font-size:1.12rem;gap:6px}header .lang-btn{padding:.4rem .9rem;font-size:.9rem}} /* update17: الاسم الأطول يبقى مع زر اللغة في سطر واحد على الهاتف */
+/* update46: روابط التذييل مجموعة بحسب المحاور، وأقسام المحاور في الصفحة الرئيسية */
+.site-links.grouped{display:flex;flex-direction:column;gap:8px;flex-basis:100%;order:-1}
+.site-links.grouped>.nav-pill-small.home{align-self:flex-start}
+.nav-group{border:1px solid var(--border-color);border-radius:12px;padding:4px 12px;background:var(--bg-card)}
+.nav-group>summary{cursor:pointer;font-weight:700;padding:6px 0;color:var(--text-main)}
+.nav-group>summary small{color:var(--text-muted);font-weight:400}
+.nav-group .nav-links{display:flex;flex-wrap:wrap;gap:8px;padding:6px 0 10px}
+.nav-pill-small.hub{border-color:var(--accent-gold);color:var(--accent-gold)}
+.pillar-block{margin-top:2.2rem}
+.pillar-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;font-size:1.35rem;margin:0 0 .3rem;padding-bottom:.4rem;border-bottom:2px solid var(--border-color)}
+.pillar-title small{color:var(--text-muted);font-weight:400;font-size:.95rem}
+.pillar-hub{font-size:.95rem;margin-inline-start:auto;color:var(--accent-blue);text-decoration:none;font-weight:600}

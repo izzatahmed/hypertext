@@ -1,5 +1,5 @@
-/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update38)
-   تعتمد على assets/topics.js (TOPICS وAXES وTLINKS) للبحث وروابط التذييل وخريطة الصفحة الرئيسية،
+/* الموسوعة القرآنية المترابطة | Quranic Hypertext Encyclopedia — الشيفرة المشتركة (update46)
+   تعتمد على assets/topics.js (PILLARS وTOPICS وAXES وTLINKS) للبحث وروابط التذييل وخريطة الصفحة الرئيسية،
    وعلى assets/search.js (فهرس البحث الكامل) الذي يُحمَّل عند أول استعمال لصندوق البحث،
    وعلى assets/raghib.js (مفردات الراغب الأصفهاني) الذي يُحمَّل بعده عند البحث بكلمة عربية. */
 function isAr(){return document.body.getAttribute('lang')==='ar'}
@@ -25,18 +25,31 @@ function placeOpenTips(){document.querySelectorAll('.verse-tooltip').forEach(fun
 document.querySelectorAll('.verse-tooltip').forEach(function(t){function go(){placeTip(t);requestAnimationFrame(function(){placeTip(t)})}t.addEventListener('mouseenter',go);t.addEventListener('focusin',go);t.addEventListener('click',go)});
 (function(){var rq=0;function mv(){if(rq)return;rq=requestAnimationFrame(function(){rq=0;placeOpenTips()})}window.addEventListener('scroll',mv,{passive:true,capture:true});window.addEventListener('resize',mv)})();
 
-/* روابط التذييل: كل عنصر .site-links يُملأ بروابط جميع الصفحات من السجل */
+/* روابط التذييل: كل عنصر .site-links يُملأ بروابط الصفحات من السجل، مجموعةً بحسب المحاور الأربعة في قوائم تنطوي */
 function currentPage(){var p=location.pathname.split('/').pop();return p||'index.html'}
-function fillSiteLinks(){var T=window.TOPICS;if(!T)return;var here=currentPage();var list=[{f:'index.html',ar:'الرئيسية',en:'Home'}].concat(T);
-  document.querySelectorAll('.site-links').forEach(function(box){if(box.childElementCount)return;list.forEach(function(t){if(t.f===here)return;var a=document.createElement('a');a.href=t.f;a.className='nav-pill-small';a.innerHTML='<span class="lang-ar">'+t.ar+'</span><span class="lang-en">'+t.en+'</span>';box.appendChild(a)})})}
+function fillSiteLinks(){var T=window.TOPICS,PL=window.PILLARS;if(!T)return;var here=currentPage();
+  function pill(t,cls){var a=document.createElement('a');a.href=t.f;a.className='nav-pill-small'+(cls?' '+cls:'');a.innerHTML='<span class="lang-ar">'+t.ar+'</span><span class="lang-en">'+t.en+'</span>';return a}
+  document.querySelectorAll('.site-links').forEach(function(box){if(box.childElementCount)return;
+    if(!PL){[{f:'index.html',ar:'الرئيسية',en:'Home'}].concat(T).forEach(function(t){if(t.f!==here)box.appendChild(pill(t))});return}
+    box.classList.add('grouped');
+    if(here!=='index.html')box.appendChild(pill({f:'index.html',ar:'الرئيسية',en:'Home'},'home'));
+    Object.keys(PL).forEach(function(k){var p=PL[k],list=T.filter(function(t){return t.p===k});if(!list.length)return;
+      var d=document.createElement('details');d.className='nav-group';if(here===p.f||list.some(function(t){return t.f===here}))d.open=true;
+      var sm=document.createElement('summary');sm.innerHTML='<span class="lang-ar">'+p.ar+'</span><span class="lang-en">'+p.en+'</span> <small>('+list.length+')</small>';d.appendChild(sm);
+      var w=document.createElement('div');w.className='nav-links';
+      if(p.f&&p.f!==here)w.appendChild(pill({f:p.f,ar:'صفحة المحور',en:'Section page'},'hub'));
+      list.forEach(function(t){if(t.f!==here)w.appendChild(pill(t))});d.appendChild(w);box.appendChild(d)})})}
 try{fillSiteLinks()}catch(e){console.error(e)}
 
 /* الخريطة العامة: window.NET='auto' تُبنى من السجل حلقةً مقسّمة بحسب المحاور */
 function buildAutoNet(){var T=window.TOPICS,A=window.AXES,LK=window.TLINKS||[];if(!T||!A)return null;
-  var axes=Object.keys(A).filter(function(a){return T.some(function(t){return t.ax===a})}),nodes=[];
-  axes.forEach(function(a){T.forEach(function(t){if(t.ax===a)nodes.push(t)})});
-  var cx=500,cy=380,r=228,gap=0.8,step=2*Math.PI/(nodes.length+gap*axes.length),first=nodes.filter(function(t){return t.ax===axes[0]}).length,ang=-Math.PI/2-(first-1)*step/2,prev=null,N=[],byId={};
-  nodes.forEach(function(t){if(prev!==null&&t.ax!==prev)ang+=gap*step;prev=t.ax;N.push({id:t.id,ar:t.ar,en:t.en,x:Math.round(cx+r*Math.cos(ang)),y:Math.round(cy+r*Math.sin(ang)),c:A[t.ax][0],dar:t.d?t.d[0]:'',den:t.d?t.d[1]:'',u:t.f,la:ang});byId[t.id]=t;ang+=step});
+  var PL=window.PILLARS,pk=PL?Object.keys(PL):[undefined],axes=Object.keys(A).filter(function(a){return T.some(function(t){return t.ax===a})}),nodes=[];
+  pk.forEach(function(p){axes.forEach(function(a){T.forEach(function(t){if(t.ax===a&&(!PL||t.p===p))nodes.push(t)})})});
+  /* فراغ صغير بين الأقسام، وأكبر بين المحاور الأربعة */
+  var gA=0.6,gP=1.8,gaps=0,pv=null;nodes.forEach(function(t){if(pv){gaps+=t.p!==pv.p?gP:(t.ax!==pv.ax?gA:0)}pv=t});if(nodes.length)gaps+=PL?gP:gA;
+  var cx=500,cy=380,r=228,step=2*Math.PI/(nodes.length+gaps),first=0;for(var i=0;i<nodes.length&&nodes[i].ax===nodes[0].ax&&nodes[i].p===nodes[0].p;i++)first++;
+  var ang=-Math.PI/2-(first-1)*step/2,prev=null,N=[],byId={};
+  nodes.forEach(function(t){if(prev)ang+=(t.p!==prev.p?gP:(t.ax!==prev.ax?gA:0))*step;prev=t;N.push({id:t.id,ar:t.ar,en:t.en,x:Math.round(cx+r*Math.cos(ang)),y:Math.round(cy+r*Math.sin(ang)),c:A[t.ax][0],dar:t.d?t.d[0]:'',den:t.d?t.d[1]:'',u:t.f,la:ang});byId[t.id]=t;ang+=step});
   var E=LK.filter(function(l){return byId[l[0]]&&byId[l[1]]}).map(function(l){return[l[0],l[1],A[byId[l[0]].ax][0],l[2],l[3]]});
   return{N:N,E:E,chord:true,radial:true,vb:'0 0 1000 760',cx:cx,cy:cy,fs:[15,13]}}
 
