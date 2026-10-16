@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 64 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
+- عدد الموضوعات: 70 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور | القسم |
@@ -16,6 +16,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `tashri.html` | صفحة محور التشريع | Law section | التشريع | — |
 | `qasas.html` | صفحة محور القصص | Stories section | القصص | — |
 | `akhlaq.html` | صفحة محور الأخلاق | Character section | الأخلاق | — |
+| `manhaj.html` | صفحة محور منهج القراءة | Reading method section | منهج القراءة | — |
 | `tawhid.html` | التوحيد | Tawhid | العقيدة | العقيدة |
 | `huda.html` | الهدى | Guidance | العقيدة | العقيدة |
 | `dalal.html` | الضلال | Misguidance | العقيدة | العقيدة |
@@ -33,13 +34,16 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `nar.html` | النار | The Fire | العقيدة | اليوم الآخر |
 | `sama.html` | السماء والأرض | Heaven and earth | العقيدة | الصيغ المتكررة |
 | `dhikr.html` | الذكر والحمد والتسبيح | Remembrance and glorification | العقيدة | الصيغ المتكررة |
+| `ilm.html` | العلم والعقل والتفكر | Knowledge, reason and reflection | العقيدة | الصيغ المتكررة |
 | `dunya.html` | الدنيا والآخرة والدرجات | This world, the Hereafter and degrees | العقيدة | اليوم الآخر |
 | `qadar.html` | القضاء والقدر والمشيئة | Decree, measure and will | العقيدة | العقيدة |
+| `fitna.html` | الابتلاء والفتنة | Trial and testing | العقيدة | العقيدة |
 | `jinn.html` | الجن والشياطين | Jinn and devils | العقيدة | أركان الإيمان |
 | `salat.html` | الصلاة | Prayer | التشريع | العبادات |
 | `zakat.html` | الزكاة | Zakat | التشريع | العبادات |
 | `siyam.html` | الصيام | Fasting | التشريع | العبادات |
 | `hajj.html` | الحج | Hajj | التشريع | العبادات |
+| `dua.html` | الدعاء | Supplication | التشريع | العبادات |
 | `khamr.html` | الخمر | Wine | التشريع | التدرج في التشريع |
 | `riba.html` | الربا | Riba | التشريع | التدرج في التشريع |
 | `jihad.html` | القتال | Fighting | التشريع | التدرج في التشريع |
@@ -78,6 +82,9 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `sidq.html` | الصدق والكذب | Truthfulness and lying | الأخلاق | الأخلاق |
 | `hasana.html` | الحسنات والسيئات | Good and bad deeds | الأخلاق | الأخلاق |
 | `adl.html` | العدل والظلم | Justice and injustice | الأخلاق | الأخلاق |
+| `amana.html` | الأمانة والوفاء بالعهد | Trust and keeping covenants | الأخلاق | الأخلاق |
+| `walidayn.html` | الوالدان وذوو القربى | Parents and relatives | الأخلاق | الأخلاق |
+| `kibr.html` | الكبر والتواضع | Arrogance and humility | الأخلاق | الأخلاق |
 | `nuzul.html` | أنزل ونزّل | Revelation | منهج القراءة | الهيمنة والعهد |
 | `latayif.html` | اللطائف العددية | Numerical observations | منهج القراءة | القصص والأمثال |
 
@@ -92,7 +99,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 ### إضافة موضوع جديد
 1. أنشئ الصفحة على قالب `tawhid.html`، واجعل في آخرها `<span class="site-links"></span>` داخل شريط الروابط الأخير، ثم `<script src="assets/topics.js"></script><script src="assets/site.js?v=N"></script>`.
 2. أضف سطراً للموضوع في `TOPICS`، وفيه المحور `p` والقسم `ax`، وروابطه في `TLINKS` داخل `assets/topics.js`.
-3. صفحات المحاور الأربعة (`aqida.html` و`tashri.html` و`qasas.html` و`akhlaq.html`) تُولَّد من السجل وبطاقات الرئيسية، فيُعاد توليدها.
+3. صفحات المحاور الأربعة (`aqida.html` و`tashri.html` و`qasas.html` و`akhlaq.html`) تُولَّد من السجل وبطاقات الرئيسية، فيُعاد توليدها. وصفحة منهج القراءة (`manhaj.html`) تُولَّد بـ`manhaj.py` من السجل ونصوص الصفحات، وفيها قائمة المراجعة المتخصصة تُجمع آلياً.
 4. أضف بطاقته إلى قسم محوره في `index.html` وحدّث العداد.
 5. ارفع: الصفحة الجديدة، و`assets/topics.js`، و`index.html`. لا حاجة إلى تعديل بقية الصفحات.
 
