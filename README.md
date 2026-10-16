@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 63 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
+- عدد الموضوعات: 64 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور | القسم |
@@ -77,6 +77,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `istighfar.html` | الاستغفار | Forgiveness | الأخلاق | الأخلاق |
 | `sidq.html` | الصدق والكذب | Truthfulness and lying | الأخلاق | الأخلاق |
 | `hasana.html` | الحسنات والسيئات | Good and bad deeds | الأخلاق | الأخلاق |
+| `adl.html` | العدل والظلم | Justice and injustice | الأخلاق | الأخلاق |
 | `nuzul.html` | أنزل ونزّل | Revelation | منهج القراءة | الهيمنة والعهد |
 | `latayif.html` | اللطائف العددية | Numerical observations | منهج القراءة | القصص والأمثال |
 
