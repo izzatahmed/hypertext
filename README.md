@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 70 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
+- عدد الموضوعات: 78 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور | القسم |
@@ -26,6 +26,11 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `ikhlas.html` | الإخلاص | Sincerity | العقيدة | العقيدة |
 | `asma.html` | الأسماء الحسنى | Divine Names | العقيدة | الأسماء الحسنى |
 | `rahman.html` | الرحمن الرحيم | Ar-Rahman ar-Rahim | العقيدة | الأسماء الحسنى |
+| `ghafur.html` | الغفور، التواب، العفو | The Forgiving, the Relenting, the Pardoning | العقيدة | الأسماء الحسنى |
+| `alim.html` | العليم الخبير | The All-Knowing, the All-Aware | العقيدة | الأسماء الحسنى |
+| `sami.html` | السميع البصير | The All-Hearing, the All-Seeing | العقيدة | الأسماء الحسنى |
+| `aziz.html` | العزيز الحكيم | The Almighty, the Wise | العقيدة | الأسماء الحسنى |
+| `hayy.html` | الحي القيوم، الواحد الأحد | The Ever-Living, the Sustainer, the One | العقيدة | الأسماء الحسنى |
 | `malaika.html` | الملائكة | The Angels | العقيدة | أركان الإيمان |
 | `kutub.html` | الكتب | The Books | العقيدة | أركان الإيمان |
 | `rusul.html` | الرسل | Messengers | العقيدة | أركان الإيمان |
@@ -85,6 +90,9 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `amana.html` | الأمانة والوفاء بالعهد | Trust and keeping covenants | الأخلاق | الأخلاق |
 | `walidayn.html` | الوالدان وذوو القربى | Parents and relatives | الأخلاق | الأخلاق |
 | `kibr.html` | الكبر والتواضع | Arrogance and humility | الأخلاق | الأخلاق |
+| `maruf.html` | الأمر بالمعروف والنهي عن المنكر | Enjoining good and forbidding wrong | الأخلاق | الأخلاق |
+| `lisan.html` | آفات اللسان | Faults of the tongue | الأخلاق | الأخلاق |
+| `nafs.html` | النفس | The self | الأخلاق | الأخلاق |
 | `nuzul.html` | أنزل ونزّل | Revelation | منهج القراءة | الهيمنة والعهد |
 | `latayif.html` | اللطائف العددية | Numerical observations | منهج القراءة | القصص والأمثال |
 
