@@ -6,7 +6,7 @@
 A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 
 - الموقع: https://izzatahmed.github.io/hypertext/
-- عدد الموضوعات: 78 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
+- عدد الموضوعات: 79 في 4 محاور (العقيدة، والتشريع، والقصص، والأخلاق) وقسم لمنهج القراءة
 
 ## الصفحات | Pages
 | الملف | الموضوع | Topic | المحور | القسم |
@@ -95,6 +95,7 @@ A networked (hypertext) reading of Qur'anic topics in Arabic and English.
 | `nafs.html` | النفس | The self | الأخلاق | الأخلاق |
 | `nuzul.html` | أنزل ونزّل | Revelation | منهج القراءة | الهيمنة والعهد |
 | `latayif.html` | اللطائف العددية | Numerical observations | منهج القراءة | القصص والأمثال |
+| `isra.html` | سورة الإسراء محوراً | Surat al-Isra as a hub | منهج القراءة | الصيغ المتكررة |
 
 ## البنية | Structure
 - `assets/style.css`: التنسيق المشترك.
